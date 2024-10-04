@@ -1,0 +1,123 @@
+<div id="head">
+  <h1 class="heading">Post a job</h1>
+</div>
+<div id="form">
+
+  <div class="bg">
+    <form action="/" method="post" enctype="multipart/form-data">
+      <div class="select-container">
+        <select name="category" id="cate" style="background-color: #ffdcf6cf">
+          <option value="" disabled selected>Select Job Category</option>
+          <option value="non-tech">Non Tech</option>
+          <option value="tech">Tech</option>
+        </select>
+      </div>
+      <div class="select-container">
+        <select name="desc" id="cate" style="background-color: #f3f7ff">
+          <option value="" disabled selected>Select Job Designation</option>
+          <option value=" Backend Developer">Backend Developer</option>
+          <option value="DevOps">DevOps</option>
+          <option value="FrontEnd Developer">FrontEnd Developer</option>
+          <option value="Full Stack Developer">Full Stack Developer</option>
+          <option value="Java Developer">Java Developer</option>
+          <option value="HR">HR</option>
+          <option value="Mern Developer">Mern Developer</option>
+          <option value="Python Developer">Python Developer</option>
+          <option value="React Developer">React Developer</option>
+          <option value="SDE">SDE</option>
+          <option value="UI/UX Developer">UI/UX Developer</option>
+        </select>
+      </div>
+      <div class="form-group" style="background-color: #fbe3e8">
+        <label for="username">Enter Location</label>
+        <input
+          type="text"
+          id="username"
+          name="location"
+          placeholder="Enter Job Location"
+          style="background-color: #f2cbd4"
+        />
+      </div>
+      <div class="form-group" style="background-color: #f9d4d1">
+        <label for="username">Company Name</label>
+        <input
+          type="text"
+          id="username"
+          name="companyName"
+          placeholder="Enter company Name"
+          style="background-color: rgb(245, 188, 201)"
+        />
+      </div>
+      <div class="form-group" style="background-color: #f9d4d1">
+        <label for="username">Company Icon</label>
+        <input
+          type="file"
+          id="username"
+          name="imgurl"
+          accept="image/*"
+          placeholder="Enter company icon"
+          style="background-color: rgb(245, 188, 201)"
+        />
+      </div>
+      <div class="form-group" style="background-color: #ca86e758">
+        <label for="username"> Salary range</label>
+        <input
+          type="text"
+          id="username"
+          name="salary"
+          placeholder="Enter alary range"
+          style="background-color: #ca86e758"
+        />
+      </div>
+      <div class="form-group" style="background-color: #dcffe1cf">
+        <label for="username">Total Positions</label>
+        <input
+          type="number"
+          id="username"
+          name="openings"
+          placeholder="Total No of Openings"
+          style="background-color: #c2ffcbcf"
+        />
+      </div>
+      <div class="form skill" style="background-color: #fcffdccf">
+        <label for="skills">Select Required Skills:</label>
+        <select name="skills" id="skills" multiple>
+          <option value="JavaScript">JavaScript</option>
+          <option value="Python">Python</option>
+          <option value="Java">Java</option>
+          <option value="C++">C++</option>
+          <option value="Ruby">Ruby</option>
+          <option value="React">React</option>
+          <option value="Node.js">Node.js</option>
+          <option value="Node.js">Express.js</option>
+          <option value="Node.js">C</option>
+          <option value="Node.js">C#</option>
+          <option value="SQL">SQL</option>
+          <option value="AWS">AWS</option>
+          <option value="Docker">Docker</option>
+        </select>
+      </div>
+      <div
+        class="form skill"
+        style="background-color: #e3dbfb; display: flex; padding: 10px"
+      >
+        <label for="apply" style="margin-right: 10px; font-weight: 600"
+          >Apply-by:</label
+        >
+        <input
+          type="date"
+          id="apply"
+          name="apply"
+          style="
+            background-color: #c4bcda;
+            width: 150px;
+            height: 30px;
+            padding-left: 10px;
+          "
+        />
+      </div>
+
+      <button type="submit" id="postbtn">Add post</button>
+    </form>
+  </div>
+</div>

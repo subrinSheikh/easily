@@ -1,0 +1,26 @@
+
+<div id="head">
+  <h1 class="heading">Apply to your dream job</h1>
+</div>
+<div class="apply-form">
+  <form action="/apply-form/<%=jobs.id%>" method="post" enctype="multipart/form-data">
+ 
+    <div class="apply">
+      <label for="name">Name: </label>
+      <input type="text" name="name" value="" id="name" />
+    </div>
+    <div class="apply">
+      <label for="email">Email: </label>
+      <input type="email" name="email" value="" id="email" />
+    </div>
+    <div class="apply">
+      <label for="number">Contact:</label>
+      <input type="number" name="number" value="" id="number" />
+    </div>
+    <div class="apply">
+      <label for="file">Upload Resume</label>
+      <input type="file" name="pdf" value="" id="file" accept="application/pdf" />
+    </div>
+    <button type="submit" class="apply-btn">Apply</button>
+  </form>
+</div>

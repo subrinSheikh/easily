@@ -1,0 +1,25 @@
+
+
+
+
+<div class="image-container">
+  <din class="info">
+    <h1>A comprehensive platform for reliable</h1>
+    <br />
+    <h2>job opportunities and interships</h2>
+  </din>
+
+  <img id="img" src="/img/Add a heading.png" alt="3D Image" />
+  <div id="span">
+    <span id="s1">Get discovered.</span><span id="s1">Get hired.</span>
+  </div>
+  <div id="btns">
+    <button><a href="/jobs">I'm job seeker</a></button>
+    <% if(locals.userEmail){ %>
+      <button><a href="/logout">Logout</a></button>
+
+    <% }else{ %>
+    <button><a href="/register">I'm recruiter</a></button>
+    <% } %>
+  </div>
+</div>

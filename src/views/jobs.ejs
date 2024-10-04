@@ -1,0 +1,73 @@
+<div id="head">
+  <h1 class="heading">Welcome to our Job portal</h1>
+</div>
+
+
+<% if(locals.lastVisit){%>
+<div> <h5 class="heading" style=" background: -webkit-linear-gradient(
+  45deg,
+  rgb(167, 72, 211) 7%,
+  rgb(224, 124, 124) 58%,
+  rgb(208, 160, 92) 100%
+);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;margin-left: 50px;"> Your Last visit was on : <%=lastVisit %></h5> </div>
+
+
+<% }%>
+
+
+
+
+
+
+
+
+<% jobs.forEach((j,index)=> { %>
+<div class="jobInfo">
+  <div id="job" style="background-color: <%= colors[index % colors.length] %>">
+    <div class="com">
+      <span class="posted"><%= j.apply %></span>
+      <span class="posted"><%= j.category %></span>
+    </div>
+    <div id="companyName"><%= j.companyName %></div>
+    <div class="com">
+      <span class="design"><%= j.desc %></span>
+      <span class="logo">
+        <img
+          src="<%=j.imgurl%>"
+          style="
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: 2px solid gray;
+          "
+          alt="company-icon"
+        />
+      </span>
+    </div>
+    <div class="com">
+      <span class="skills">
+        <ul class="over">
+          <% if (Array.isArray(j.skills) && j.skills.length > 0) { %> <%
+          j.skills.forEach(function(skill) { %>
+          <li><%= skill %></li>
+          <% }); %> <% } else { %>
+          <li>No skills available</li>
+          <% } %>
+        </ul>
+      </span>
+    </div>
+  </div>
+
+  <div id="remain">
+    <div id="lpa">
+      <i class="fa-solid fa-indian-rupee-sign"></i><%= j.salary %>
+    </div>
+    <div class="com">
+      <div id="loc"><%= j.location %></div>
+      <a href="/job/<%=j.id%>" id="applybtn">Details</a>
+    </div>
+  </div>
+</div>
+<% }) %>

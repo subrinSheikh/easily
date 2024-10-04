@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>easily</title>
+    <!-- <link rel="stylesheet" href="main.css" /> -->
+    <link rel="stylesheet" href="/css/main.css" />
+    <script src ="/main.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+  </head>
+  <body>
+    <div class="blur">
+      <div id="mains">
+        <div id="common">
+          <div id="d">
+            <h2>easily</h2>
+          </div>
+          <div id="d1"><a href="/"> Home</a></div>
+
+          <div id="d2"><a href="/jobs"> Job</a></div>
+        <%  if(locals.userEmail&&locals.userName){%>
+          <div id="d3" class="dropdown">
+            <button class="dropdown-toggle">
+            <%=locals.userName %> <span class="arrow">▼</span>
+            </button>
+            <ul class="dropdown-menu">
+              <li> <a href="/postjob">Post New Job</a></li>
+              <li> <a href="/logout">Logout</a></li></ul>
+          </div>
+          <%  } else{ %>
+          <div id="d3" class="dropdown">
+            <button class="dropdown-toggle">
+              Recruiter <span class="arrow">▼</span>
+            </button>
+            <ul class="dropdown-menu">
+              <li> <a href="/postjob">Post New Job</a></li>
+              <li> <a href="/login">Login</a></li>
+            </ul>
+          </div>
+          <%  } %>
+          <div id="d4">
+            <form id="searchForm" action="/search" method="post">
+              <input type="text" placeholder="search job" id="search" name="name"/>
+              <button id="go" type="submit">Go</button>
+            </form>
+          </div>
+        </div>
+
+        <div id="changes">
+            <%-body%>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,113 @@
+
+<% jobs.forEach((j,index)=> { %>
+
+<div id="head">
+  <h1 class="heading">
+    <%= j.desc %> opportunity in <%= j.location %> at <%= j.companyName %>
+  </h1>
+</div>
+
+<div class="details">
+  <%if(locals.userEmail){ %>
+  <div id="updatedelete">
+    <!-- <div><a href="/job/update-job/<%=j.id%>" id="update" onclick="">Update</a></div> -->
+    <div>
+      <button id="update" onclick="updating('<%=j.id%>')">Update </button>
+    </div>
+    <div><button id="delete" onclick="deleting('<%=j.id%>')">Delete </button></div>
+    <!-- <div ><a id="delete" href="/job/delete/<%=j.id%>" onclick="return deleting('<%=j.id%>');">Delete</a></div> -->
+  </div>
+  <% }%>
+  <div class="jobInfo" style="width: 90%">
+    <div
+      id="job"
+      style="
+        width: 99%;
+        background-color: <%= colors[index + 1 % colors.length] %>;"
+    >
+      <div class="com">
+        <span class="posted">Posted-on <%= new Date().toLocaleDateString() %></span>
+        <span class="posted">Apply-By <%= j.apply %></span>
+        <span class="posted"><%= j.category %></span>
+      </div>
+      <div id="companyName"><%= j.companyName %></div>
+      <div class="com">
+        <span class="design"><%= j.desc %></span>
+        <span class="logo">
+          <img
+          <% if (j.imgurl.startsWith('http')) { %>
+            src="<%= j.imgurl %>"
+          <% } else { %>
+            src="/<%= j.imgurl %>"
+          <% } %>"
+          style="
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: 2px solid gray;
+          "
+          alt="company-icon"
+        />
+        
+        </span>
+      </div>
+      <div class="com">
+        <span
+          class="design"
+          style="font-size: 16px; font-family: 'Source Code Pro', monospace"
+        >
+          No of openings:<%= j.openings %></span
+        >
+      </div>
+      <div class="com">
+        <span
+          class="design1"
+          style="font-size: 16px; font-family: 'Source Code Pro', monospace"> <a style="color: rgb(33, 69, 57);" href="/job/applicants/<%=j.id%>" id="applicants"> 
+         
+              Applicants: <%=j.applicants.length%>
+
+          </a></span>
+      </div>
+      <div class="com">
+        <span class="skills">
+          <ul class="over">
+            <% if (Array.isArray(j.skills) && j.skills.length > 0) { %> <%
+            j.skills.forEach(function(skill) { %>
+            <li><%= skill %></li>
+            <% }); %> <% } else { %>
+            <li>No skills available</li>
+            <% } %>
+          </ul>
+        </span>
+      </div>
+    </div>
+
+    <div
+      id="remain"
+      class="color"
+      style="background-color: <%= colors[index + 7 % colors.length] %>"
+    >
+      <div id="lpa">
+        <i class="fa-solid fa-indian-rupee-sign"></i><%= j.salary %>
+      </div>
+      <div class="com">
+        <div id="loc"><%= j.location %></div>
+        <a href="/apply-form/<%=j.id%>" id="applybtn">Apply Now</a>
+      </div>
+    </div>
+  </div>
+</div>
+<% }) %>
+
+
+
+
+
+
+
+
+
+
+
+
+

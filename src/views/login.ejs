@@ -1,0 +1,32 @@
+<div id="head">
+    <h1 class="heading">Login easily!</h1>
+  </div>
+
+  <div id="alreadyRegister">
+    <span>Not Register?</span><span><a href="/register">Register As Recruiter </a></span>
+  </div>
+
+
+  <div class="apply-form">
+    <form action="/login" method="post" >  
+
+      <% if(err){%>
+        <div class="danger">
+         <ul><li>
+           <%= err %>
+
+         </li></ul>
+        </div>
+    <%}%>
+      <div class="apply">
+        <label for="email">Email: </label>
+        <input type="email" name="email" value="" id="email" />
+      </div>
+      <div class="apply">
+        <label for="number">Password:</label>
+        <input type="password" name="password" value="" id="password" />
+      </div>
+    
+      <button type="submit" class="apply-btn">Login</button>
+    </form>
+  </div>

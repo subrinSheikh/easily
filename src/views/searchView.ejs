@@ -1,0 +1,66 @@
+<div id="head">
+    <h1 class="heading">Your Searched Job </h1>
+  </div>
+
+
+  <% if(jobs.length>0) { %>
+    <% jobs.forEach((j,index)=> { %>
+        <div class="jobInfo">
+          <div id="job" style="background-color: <%= colors[index % colors.length] %>">
+            <div class="com">
+              <span class="posted"><%= j.apply %></span>
+              <span class="posted"><%= j.category %></span>
+            </div>
+            <div id="companyName"><%= j.companyName %></div>
+            <div class="com">
+              <span class="design"><%= j.desc %></span>
+              <span class="logo">
+                <img
+                <% if (j.imgurl.startsWith('http')) { %>
+                  src="<%= j.imgurl %>"
+                <% } else { %>
+                  src="/<%= j.imgurl %>"
+                <% } %>
+                    style="
+                    width: 40px;
+                    height: 40px;
+                    border-radius: 50%;
+                    border: 2px solid gray;
+                  "
+                  alt="icon"
+                />
+              </span>
+            </div>
+            <div class="com">
+              <span class="skills">
+                <ul class="over">
+                  <% if (Array.isArray(j.skills) && j.skills.length > 0) { %> <%
+                  j.skills.forEach(function(skill) { %>
+                  <li><%= skill %></li>
+                  <% }); %> <% } else { %>
+                  <li>No skills available</li>
+                  <% } %>
+                </ul>
+              </span>
+            </div>
+          </div>
+        
+          <div id="remain">
+            <div id="lpa">
+              <i class="fa-solid fa-indian-rupee-sign"></i><%= j.salary %>
+            </div>
+            <div class="com">
+              <div id="loc"><%= j.location %></div>
+              <a href="/job/<%=j.id%>" id="applybtn">Details</a>
+            </div>
+          </div>
+        </div>
+     <% }) %>
+        
+
+
+
+    <% } else if (error) { %>
+        <h1 style="color: red"><%= error %></h1>
+        <% } %>
+ 

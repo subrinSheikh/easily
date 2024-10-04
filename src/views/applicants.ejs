@@ -1,0 +1,23 @@
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Contact</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% applicants.forEach((a)=>{%>
+      <tr>
+        <td><%= a.applicantId  %></td>
+        <td><%= a.name  %></td>
+        <td><%= a.email %></td>
+        <td><%= a.contact%></td>
+        <td><a href="<%=a.resumePath%> ">View</a></td>
+      </tr>
+   <% }) %>
+    
+  </tbody>
+</table>
