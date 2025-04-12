@@ -3,6 +3,7 @@
 
 ## **Project Overview**
 This project is a Job Portal System built with **ExpressJS** using the **MVC (Model-View-Controller)** architecture to manage recruiters, job seekers, and job postings. The application allows job seekers to apply for jobs, view job details, and manage applications. Recruiters can create, update, delete, and view job postings, as well as view applicants and their resumes. The application also includes a user authentication system, session management, email notifications, and file upload handling for resumes.
+Explanation Link [https://drive.google.com/file/d/1zaZaKCbgpOhR3nFyczXTTLsX9qLckuaq/view?usp=sharing]
 
 The primary goal of this system is to simplify the job application process by providing a centralized platform where both recruiters and job seekers can efficiently interact. It is built with scalability and maintainability in mind by using **ES6 Modules**, **Express sessions**, and **EJS** for templating.
 
@@ -51,7 +52,7 @@ Start the server with:
 node index.js
 ```
 
-Your application will be available at [http://localhost:4000](http://localhost:4000).
+Your demo link will be available at [https://drive.google.com/file/d/1zaZaKCbgpOhR3nFyczXTTLsX9qLckuaq/view?usp=sharing]
 
 ### **5. Database Setup**
 Ensure that your MongoDB instance is running and that the `job-portal` database is created automatically during the application setup.
