@@ -125,6 +125,11 @@ export default class JobController {
 
     }
   }
+//   async matchCandidatesToJob(req, res) {
+//     const jobId = req.params.id;
+//     const matchedCandidates = await matchApplicantsToJob(jobId);
+//     res.render('matchedCandidates', { matchedCandidates });
+// }
   
 
 

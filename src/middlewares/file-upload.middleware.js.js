@@ -22,5 +22,5 @@ const storage=multer.diskStorage({
     }
 })
 
-export const uploadPdf=  multer({storage:storageConfiguration});
+export const uploadPdf=multer({storage:storageConfiguration});
 export const uploadImg=multer({storage:storage});

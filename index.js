@@ -51,7 +51,7 @@ app.post('/search',jobController.postSerachView);
 
 //update
 app.get('/job/update-job/:id',auth,authorizeJobOwner, jobController.getUpdateJobView);
-app.post('/job/:id',auth,authorizeJobOwner,uploadImg.single('imgurl'),jobController.postUpdatedView);//use a put method for updation
+app.post('/job/:id',auth,authorizeJobOwner,uploadImg.single('imgurl'),jobController.postUpdatedView);
 
 //delete
 // app.post('/job/delete/:id',auth,jobController.getDeleteJob);
